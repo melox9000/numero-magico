@@ -6,7 +6,17 @@
     <title>Document</title>
 </head>
 <body>
-    <script type="text/javascript">
+    <form action="" method="get">
+        <input id="prova" type="number">
+        <input id="button" type="button">
+    </form>
+   
+<script type="text/javascript">
+    let button = document.querySelector("#button")
+    button.addEventListener("click", function(event){
+        console.log(event)
+        
+    })
         function sanitize(n) {
             while (n === null || isNaN(n)) {
                 n = prompt("Inserisci necessariamente un numero.");
@@ -24,7 +34,7 @@
         console.log(random); 
 
         while (i < 5 && !indovinato) {
-            let risposta = prompt("Inserisci un numero da 1 a 100");
+            let risposta = document.querySelector("#prova")
             risposta = sanitize(risposta);
             
             if (risposta < random) {
