@@ -6,24 +6,74 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>Guess the number</h1>
+
+    Ho generato un numero casuale... prova ad indovinarlo!
+
+    <br />
+
+    Hai ancora 5 tentativi
+
+    <form action="" method="get">
+
+        <input id="userGuess" type="number" name="user_guess" value="100"/>
+        <input id="button" type="button" name="guess" value="Indovina">
+
+
+    </form>
     <script type="text/javascript">
-        function sanitize(n) {
-            while (n === null || isNaN(n)) {
-                n = prompt("Inserisci necessariamente un numero.");
+         let number
+         let i = 0; 
+         let indovinato = false;
+        let min = 1
+        let max = 100
+        let imax=5
+        let random =0
+        random=generateRandomInteger(min,max)
+        let button =document.querySelector("#button")
+        button.addEventListener("click",function(event){
+            if (i >= imax) {
+                console.log("Tentativi esauriti, il numero corretto era "+random)
             }
-            return parseInt(n.trim()); 
+
+            number = document.querySelector("#userGuess").value
+            number = parseInt(number)
+            i += 1
+            if (number < min || number > max || isNaN(number)){
+                console.log("Errore inserimento")
+                
+            }
+            
+        if(number === random){
+        console.log("Hai indovinato!");
+        
+    }
+    else {
+        if(number < random){
+            console.log("Numero troppo piccolo, riprova")
+        }
+        else{ 
+            if (number > random){
+            console.log("Numero troppo grande, riprova")
+        }
+        }}})
+        function sanitize(n) {
+            let num = number
+            return num.trim()
         }
 
         function generateRandomInteger(min, max) {
-            return Math.floor(Math.random() * (max - min + 1)) + min; 
+            let n=0
+        n = Math.random(min,max)
+        n=n*(max-min)  
+        n = parseInt(n)+min
+        console.log(n)
+        return n
         }
 
-        let i = 0; 
-        let indovinato = false;
-        let random = generateRandomInteger(1, 100);
-        console.log(random); 
+      
 
-        while (i < 5 && !indovinato) {
+       /* while (i < 5 && !indovinato) {
             let risposta = prompt("Inserisci un numero da 1 a 100");
             risposta = sanitize(risposta);
             
@@ -41,6 +91,7 @@
         if (i === 5 && !indovinato) {
             console.log("Hai finito i tentativi. Il numero era: " + random);
         }
+        */
     </script>
 </body>
 </html>
