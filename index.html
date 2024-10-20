@@ -8,28 +8,51 @@
     <link rel="stylesheet" href="static/css/index.css">
 </head>
 <body>
-    
-       
-   
- 
-    Ho generato un numero casuale... prova ad indovinarlo!
-
-    <br />
-
-    Hai ancora 5 tentativi
 
     <form action="" method="get">
-        <h1 class="titolo" >Indovina il numero</h1>
-        <ul class="list-group list-group-numbered">
-            <li class="list-group-item">Il computer sceglierà segretamente un numero intero casuale tra 1 e 100.</li>
-            <li class="list-group-item">Il tuo obiettivo è indovinare questo numero segreto nel minor numero di tentativi possibile.</li>
-            <li class="list-group-item">Ad ogni tentativo, inserisci un numero e il computer ti darà un indizio</li>
-            <li class="list-group-item">A fourth item</li>
-            <li class="list-group-item">And a fifth one</li>    
-          </ul>
-        <input id="userGuess" type="number" name="user_guess" value="100"/>
-        <input id="button" type="button" name="guess" value="Indovina">
+        <h1 class="titolo" ><b>INDOVINA IL NUMERO</b></h1>
+        
+        <div class="liste">
+            <div class="lista">  
+                <ol>
+                    <li>Il computer sceglierà segretamente un numero intero casuale tra 1 e <br>100.</li>
 
+                    <li>Il tuo obiettivo è indovinare questo numero segreto nel minor numero<br> di tentativi possibile.</li>
+
+                    <li>Ad ogni tentativo, inserisci un numero e il computer ti darà un indizio:</li>
+                        
+                </ol>
+
+                <ul>
+                    <li>Se il tuo numero è troppo basso, ti dirà "Troppo basso, prova un<br> numero più alto!"</li>
+
+                    <li>Se il tuo numero è troppo alto, ti dirà "Troppo alto, prova un numero<br> più basso!"</li>
+
+                    <li>Se indovini il numero esatto, vincerai la partita!</li>
+
+                </ul>
+
+                <ol>
+                    <li>Continua a fare tentativi finché non indovini il numero magico.</li>
+
+                    <li>Alla fine del gioco, ti verrà mostrato il numero di tentativi che hai<br> impiegato per indovinare.</li>
+
+                    <li>Sfida te stesso a indovinare il numero con il minor numero di tentativi<br> possibile!</li>
+                </ol>
+            </div>
+        </div>
+        <div class="input">
+            <div class="elementi">
+        <p>Inserisci il numero magico</p>
+        <input id="userGuess" type="number" name="user_guess" value=""/>
+        <input id="button" type="button" name="guess" value="Indovina">
+    </div>
+    </div>
+        <div class="tentativi">
+            <p>Numero troppo alto!</p>
+            <br>
+            <p>Hai ancora tentativi</p>
+        </div>
 
     </form>
     </div>
