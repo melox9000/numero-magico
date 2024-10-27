@@ -77,3 +77,9 @@ p{
 .yellow{
     background-color: yellow
 }
+#bg{
+    transition: all 5s;
+}
+.buttonTheme{
+    background: #3AE3A8;
+}

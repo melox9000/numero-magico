@@ -80,19 +80,20 @@
       </div>
       <div class="tentativi">
         <div id="testo1">non hai ancora scritto un numero</div>
-        <br> </br>
+      
         <div id="testo2">Hai ancora <b>5</b> tentativi</div>
       </div>
     </form>
     <script type="text/javascript">
       
       let i = 5;
+      let win= false;
       let indovinato = false;
       let min = 1;
       let max = 100;
       let imax = 5;
       let random = 0;
-      let lista = document.querySelector("#listener");
+      let lista = document.querySelector("body");
       let testo1 = document.querySelector("#testo1");
       let testo2 = document.querySelector("#testo2");
       random = generateRandomInteger(min, max);
@@ -103,10 +104,10 @@
           console.log("Tentativi esauriti, il numero corretto era " + random);
           testo1.innerHTML = "Tentativi esauriti";
           testo2.innerHTML = "il numero corretto era " + random;
-          //return;
+          return;
         }
 
-        number = document.querySelector("#userGuess").value;
+        
         number = parseInt(number);
         if (number < min || number > max || isNaN(number)) {
           console.log("Errore inserimento");
@@ -117,40 +118,48 @@
         if (number === random) {
           console.log("Hai indovinato!");
           testo1.innerHTML = "hai vinto ";
-          //return;
-        } else {
+            ;
+            win=true;}
+            if (i === 3) {
+            lista.classlist.add("yellow");
+            lista.classlist.remove("green");
+           
+            ;
+          }
+          else if(i === 1);
+          {
+           
+            lista.classlist.add("red");
+            lista.classlist.remove("yellow");
+            ;
+          }
+            
           if (number < random) {
-            i-=i
+            
             console.log("Numero troppo piccolo, riprova");
+            i-=i
             testo1.innerHTML = "Numero troppo piccolo, riprova";
             testo2.innerHTML = "hai ancora <b>" + i + "</b> tentativi";
-            // return
-            i-=i
+           
+            
           } else {
             if (number > random) {
-                i-=i
+                
               console.log("Numero troppo grande, riprova");
+              i-=i
               testo1.innerHTML = "Numero troppo grande, riprova";
               testo2.innerHTML = "hai ancora <b>" + i + "</b> tentativi";
-              // return
+              
               
             }
             
           }
-          if (i === 3) {
-            lista.classlist.remove("green");
-            lista.classlist.add("yellow");
-            //return;
-          }
-          else if(i === 1);
-          {
-            lista.classlist.remove("yellow");
-            lista.classlist.add("red");
-            //return;
-          }
+          
+                
+          
         }
     
-      });
+      );
       function sanitize(n) {
         let num = number;
         return num.trim();
