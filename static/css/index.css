@@ -23,7 +23,7 @@ ol,ul{
     margin: 0px;
     color:black
 }
-body{
+.green{
     background-color: #CCFFC5;
 }
 .input{
@@ -70,11 +70,9 @@ p{
     display: flex;
     justify-content: center;
 }
-.green{
-    background-color: green
-}
-.blue{
-    background-color: blue
+
+.red{
+    background-color: red
 }
 .yellow{
     background-color: yellow
